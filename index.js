@@ -3,8 +3,10 @@ console.log('Soy un bot.')
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const movieApi = require('./movieApi.js')
+const dotenv = require('dotenv');
+dotenv.config();
 
-client.login('Nzg3MDY0NjQ5NjQ3Nzg0MDE2.X9PhEw.iqNE3E4LMAbpU8LSPZbYzGaikeM')
+client.login(process.env.API_TOKEN)
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
